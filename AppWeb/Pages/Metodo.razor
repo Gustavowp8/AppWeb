@@ -1,0 +1,33 @@
+﻿@page "/metodo"
+
+<h3>Metodo</h3> <br /> <hr />
+
+<h4>Calculo de salario</h4>
+
+<p>Prezado @nome</p>
+
+<p>Seu salario bruto é: @salario</p>
+
+<p>Seu total de descontos é: @desconto</p>
+
+<p>Seu salario liquido é: @salarioFinal</p>
+
+<p>
+    <button @onclick="calcularSalario">Calcular salario</button>
+</p>
+
+@code {
+
+    string nome = "Don Pedro";
+
+    double salario = 26850.35;
+
+    double desconto = 6450.78;
+
+    double salarioFinal;
+
+    void calcularSalario()
+    {
+        salarioFinal = salario - desconto;
+    }
+}
