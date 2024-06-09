@@ -1,0 +1,26 @@
+﻿@page "/nome"
+
+<h3>TesteNome</h3>
+
+<label>Digite um nome: </label><br />
+<input @bind="Novo"/>
+
+<button @onclick="Testa">Testar</button> <br />
+
+<p>O nome esta <b> @Com </b></p>
+
+@code {
+    string Nome = "Gustavo";
+    string Novo;
+    string Com;
+
+    void Testa(){
+        if (Nome != Novo)
+        {
+            Com = "Nome esta errado!";
+        }
+        else{
+            Com = "Nome esta certo!";
+        }
+    }
+}

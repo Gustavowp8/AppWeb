@@ -1,0 +1,37 @@
+﻿@page "/estoque"
+@using AppWeb.Models
+<h3>Estoque</h3>
+
+<label>Nome do produto: </label>
+<br />
+<input @bind="p.Nome" /> <br />
+
+<label>Preço: </label>
+<br />
+<input @bind="p.Preco" />
+<br />
+
+<label>Quantidade: </label>
+<br />
+<input @bind="p.Quantidade" />
+<br />
+
+<button @onclick="AdicionarProduto">Adicionar Produto</button>
+
+<button @onclick="RemoverProduto">Remover Produto</button>
+
+<p>@p.ToString()</p>
+
+@code {
+    Produto p = new Produto();
+
+    void AdicionarProduto()
+    {
+        p.AdicionarProdutos(1);
+    }
+
+    void RemoverProduto()
+    {
+        p.RemoverProdutos(1);
+    }
+}
