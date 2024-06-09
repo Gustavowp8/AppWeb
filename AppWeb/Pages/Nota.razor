@@ -1,0 +1,44 @@
+﻿@page "/nota"
+
+<h3>Nota</h3>
+
+<label>Informe a primeira nota</label><br />
+<input @bind="nota1" />
+<br /><br />
+
+<label>Informe a segunda nota</label><br />
+<input @bind="nota2" />
+
+<br /> <hr />
+<button @onclick="CalcularMedia">Calcular media</button>
+
+<br /> <hr />
+
+<h3>Sua media e @media seu status: <b>@resultado</b></h3>
+
+
+@code {
+    double nota1;
+    double nota2;
+    double media;
+    string resultado;
+
+    void CalcularMedia()
+    {
+        media = (nota1 + nota2) / 2;
+
+        if (media < 5)
+        {
+            resultado = "Reprovado";
+        }
+        else if(media >= 5 && media < 7)
+        {
+            resultado = "Recuperação";
+        }
+        else
+        {
+            resultado = "Aprovado";
+        }
+    }
+
+}
